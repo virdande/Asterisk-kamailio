@@ -1,0 +1,19 @@
+[internal]
+exten => 101,1,Answer()
+exten => 101,2,Dial(SIP/101,60)
+exten => 101,3,Playback(vm-nobodyavail)
+exten => 101,4,VoiceMail(101@main)
+exten => 101,5,Hangup()
+
+exten => 102,1,Answer()
+exten => 102,2,Dial(SIP/102,60)
+exten => 102,3,Playback(vm-nobodyavail)
+exten => 102,4,VoiceMail(102@main)
+exten => 102,5,Hangup()
+
+exten => 201,1,VoicemailMain(101@main)
+exten => 201,2,Hangup()
+
+exten => 202,1,VoicemailMain(102@main)
+exten => 202,2,Hangup()
+

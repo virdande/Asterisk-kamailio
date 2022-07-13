@@ -1,0 +1,219 @@
+Setting up libneon27:amd64 (0.32.2-1) ...
+Setting up asterisk-moh-opsound-gsm (2.03-1.1) ...
+Setting up libopencore-amrnb0:amd64 (0.1.5-1) ...
+Setting up libc-client2007e (8:2007f~dfsg-7build1) ...
+Setting up libresample1 (0.1.3-5) ...
+Setting up freetds-common (1.3.6-1) ...
+Setting up libopusfile0 (0.9+20170913-1.1build1) ...
+Setting up libsox3:amd64 (14.4.2+git20190427-2) ...
+Setting up libsybdb5:amd64 (1.3.6-1) ...
+Setting up libsox-fmt-alsa:amd64 (14.4.2+git20190427-2) ...
+Setting up libsox-fmt-base:amd64 (14.4.2+git20190427-2) ...
+Setting up asterisk-modules (1:18.10.0~dfsg+~cs6.10.40431411-2) ...
+Setting up asterisk (1:18.10.0~dfsg+~cs6.10.40431411-2) ...
+Adding system user for Asterisk
+Adding user `asterisk' to group `dialout' ...
+Adding user asterisk to group dialout
+Done.
+Adding user `asterisk' to group `audio' ...
+Adding user asterisk to group audio
+Done.
+Created symlink /etc/systemd/system/multi-user.target.wants/asterisk.service → /lib/systemd/system/asterisk.service.
+Setting up sox (14.4.2+git20190427-2) ...
+Processing triggers for libc-bin (2.35-0ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+vaibhav@vaibhav-virtual-machine:~$ sudo asterisk -r
+[sudo] password for vaibhav: 
+Asterisk 18.10.0~dfsg+~cs6.10.40431411-2, Copyright (C) 1999 - 2021, Sangoma Technologies Corporation and others.
+Created by Mark Spencer <markster@digium.com>
+Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
+This is free software, with components licensed under the GNU General Public
+License version 2 and other licenses; you are welcome to redistribute it under
+certain conditions. Type 'core show license' for details.
+=========================================================================
+Connected to Asterisk 18.10.0~dfsg+~cs6.10.40431411-2 currently running on vaibhav-virtual-machine (pid = 32757)
+vaibhav-virtual-machine*CLI> 
+vaibhav-virtual-machine*CLI> 
+vaibhav-virtual-machine*CLI> exit
+Asterisk cleanly ending (0).
+Executing last minute cleanups
+vaibhav@vaibhav-virtual-machine:~$ 
+vaibhav@vaibhav-virtual-machine:~$ 
+vaibhav@vaibhav-virtual-machine:~$ cd /etc/asterisk
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ ls
+acl.conf                 confbridge.conf         pjsip_notify.conf
+adsi.conf                config_test.conf        pjsip_wizard.conf
+agents.conf              console.conf            prometheus.conf
+alarmreceiver.conf       dbsep.conf              queuerules.conf
+alsa.conf                dnsmgr.conf             queues.conf
+amd.conf                 dsp.conf                res_config_mysql.conf
+app_mysql.conf           enum.conf               res_config_sqlite3.conf
+app_skel.conf            extconfig.conf          res_config_sqlite.conf
+ari.conf                 extensions.ael          res_corosync.conf
+ast_debug_tools.conf     extensions.conf         res_curl.conf
+asterisk.adsi            extensions.lua          res_fax.conf
+asterisk.conf            extensions_minivm.conf  res_ldap.conf
+calendar.conf            features.conf           res_odbc.conf
+ccss.conf                festival.conf           resolver_unbound.conf
+cdr_adaptive_odbc.conf   followme.conf           res_parking.conf
+cdr_beanstalkd.conf      func_odbc.conf          res_pgsql.conf
+cdr.conf                 hep.conf                res_pktccops.conf
+cdr_custom.conf          http.conf               res_snmp.conf
+cdr_manager.conf         iax.conf                res_stun_monitor.conf
+cdr_mysql.conf           iaxprov.conf            rtp.conf
+cdr_odbc.conf            indications.conf        say.conf
+cdr_pgsql.conf           logger.conf             sip.conf
+cdr_sqlite3_custom.conf  manager.conf            sip_notify.conf
+cdr_syslog.conf          manager.d               sla.conf
+cdr_tds.conf             meetme.conf             smdi.conf
+cel_beanstalkd.conf      minivm.conf             sorcery.conf
+cel.conf                 misdn.conf              ss7.timers
+cel_custom.conf          modules.conf            stasis.conf
+cel_odbc.conf            motif.conf              statsd.conf
+cel_pgsql.conf           musiconhold.conf        stir_shaken.conf
+cel_sqlite3_custom.conf  muted.conf              telcordia-1.adsi
+cel_tds.conf             ooh323.conf             test_sorcery.conf
+chan_dahdi.conf          osp.conf                udptl.conf
+chan_mobile.conf         oss.conf                users.conf
+cli_aliases.conf         phone.conf              voicemail.conf
+cli.conf                 phoneprov.conf          vpb.conf
+cli_permissions.conf     pjproject.conf          xmpp.conf
+codecs.conf              pjsip.conf
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo mv sip.conf sip.conf.backup
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ ls
+acl.conf                 confbridge.conf         pjsip_notify.conf
+adsi.conf                config_test.conf        pjsip_wizard.conf
+agents.conf              console.conf            prometheus.conf
+alarmreceiver.conf       dbsep.conf              queuerules.conf
+alsa.conf                dnsmgr.conf             queues.conf
+amd.conf                 dsp.conf                res_config_mysql.conf
+app_mysql.conf           enum.conf               res_config_sqlite3.conf
+app_skel.conf            extconfig.conf          res_config_sqlite.conf
+ari.conf                 extensions.ael          res_corosync.conf
+ast_debug_tools.conf     extensions.conf         res_curl.conf
+asterisk.adsi            extensions.lua          res_fax.conf
+asterisk.conf            extensions_minivm.conf  res_ldap.conf
+calendar.conf            features.conf           res_odbc.conf
+ccss.conf                festival.conf           resolver_unbound.conf
+cdr_adaptive_odbc.conf   followme.conf           res_parking.conf
+cdr_beanstalkd.conf      func_odbc.conf          res_pgsql.conf
+cdr.conf                 hep.conf                res_pktccops.conf
+cdr_custom.conf          http.conf               res_snmp.conf
+cdr_manager.conf         iax.conf                res_stun_monitor.conf
+cdr_mysql.conf           iaxprov.conf            rtp.conf
+cdr_odbc.conf            indications.conf        say.conf
+cdr_pgsql.conf           logger.conf             sip.conf.backup
+cdr_sqlite3_custom.conf  manager.conf            sip_notify.conf
+cdr_syslog.conf          manager.d               sla.conf
+cdr_tds.conf             meetme.conf             smdi.conf
+cel_beanstalkd.conf      minivm.conf             sorcery.conf
+cel.conf                 misdn.conf              ss7.timers
+cel_custom.conf          modules.conf            stasis.conf
+cel_odbc.conf            motif.conf              statsd.conf
+cel_pgsql.conf           musiconhold.conf        stir_shaken.conf
+cel_sqlite3_custom.conf  muted.conf              telcordia-1.adsi
+cel_tds.conf             ooh323.conf             test_sorcery.conf
+chan_dahdi.conf          osp.conf                udptl.conf
+chan_mobile.conf         oss.conf                users.conf
+cli_aliases.conf         phone.conf              voicemail.conf
+cli.conf                 phoneprov.conf          vpb.conf
+cli_permissions.conf     pjproject.conf          xmpp.conf
+codecs.conf              pjsip.conf
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo gedit sip.conf
+
+(gedit:33215): dconf-WARNING **: 14:07:11.240: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:33215): dconf-WARNING **: 14:07:11.245: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:33215): dconf-WARNING **: 14:07:11.524: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:33215): dconf-WARNING **: 14:07:11.525: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:33215): dconf-WARNING **: 14:07:11.525: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+** (gedit:33215): WARNING **: 14:15:48.266: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:33215): WARNING **: 14:15:48.267: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:33215): WARNING **: 14:15:53.799: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:33215): WARNING **: 14:15:53.799: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo mv voicemail.conf voicemail.conf backup
+mv: target 'backup' is not a directory
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo mv voicemail.conf voicemail.conf.backup
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ 
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo gedit voicemail.con
+
+(gedit:38268): dconf-WARNING **: 14:32:27.573: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:38268): dconf-WARNING **: 14:32:27.577: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:38268): dconf-WARNING **: 14:32:27.738: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:38268): dconf-WARNING **: 14:32:27.738: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+(gedit:38268): dconf-WARNING **: 14:32:27.739: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+
+** (gedit:38268): WARNING **: 14:34:15.595: Set document metadata failed: Setting attribute metadata::gedit-spell-language not supported
+
+** (gedit:38268): WARNING **: 14:34:15.596: Set document metadata failed: Setting attribute metadata::gedit-encoding not supported
+
+** (gedit:38268): WARNING **: 14:34:28.832: Set document metadata failed: Setting attribute metadata::gedit-position not supported
+
+(gedit:38268): dconf-WARNING **: 14:34:28.847: failed to commit changes to dconf: Failed to execute child process “dbus-launch” (No such file or directory)
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ 
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ 
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudu asterisk -r
+Command 'sudu' not found, did you mean:
+  command 'sudo' from deb sudo (1.9.9-1ubuntu2)
+  command 'sudo' from deb sudo-ldap (1.9.9-1ubuntu2)
+  command 'tudu' from deb tudu (0.10.4-1)
+Try: sudo apt install <deb name>
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo asterisk -r
+Asterisk 18.10.0~dfsg+~cs6.10.40431411-2, Copyright (C) 1999 - 2021, Sangoma Technologies Corporation and others.
+Created by Mark Spencer <markster@digium.com>
+Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
+This is free software, with components licensed under the GNU General Public
+License version 2 and other licenses; you are welcome to redistribute it under
+certain conditions. Type 'core show license' for details.
+=========================================================================
+Connected to Asterisk 18.10.0~dfsg+~cs6.10.40431411-2 currently running on vaibhav-virtual-machine (pid = 32757)
+vaibhav-virtual-machine*CLI> 
+vaibhav-virtual-machine*CLI> reload
+[Jul 13 14:35:22] NOTICE[38339]: res_config_ldap.c:1832 parse_config: No directory user found, anonymous binding as default.
+[Jul 13 14:35:22] ERROR[38339]: res_config_ldap.c:1858 parse_config: No directory URL or host found.
+[Jul 13 14:35:22] NOTICE[38339]: res_config_ldap.c:1776 reload: Cannot reload LDAP RealTime driver.
+[Jul 13 14:35:22] NOTICE[38339]: cdr.c:4524 cdr_toggle_runtime_options: CDR simple logging enabled.
+[Jul 13 14:35:22] NOTICE[38340]: sorcery.c:1348 sorcery_object_load: Type 'system' is not reloadable, maintaining previous values
+[Jul 13 14:35:22] WARNING[38339]: res_phoneprov.c:1233 get_defaults: Unable to find a valid server address or name.
+[Jul 13 14:35:22] ERROR[38339]: ari/config.c:312 process_config: No configured users for ARI
+[Jul 13 14:35:22] WARNING[32804]: sip/config_parser.c:818 sip_parse_nat_option: nat=yes is deprecated, use nat=force_rport,comedia instead
+[Jul 13 14:35:22] NOTICE[38339]: cel_custom.c:92 load_config: No mappings found in cel_custom.conf. Not logging CEL to custom CSVs.
+[Jul 13 14:35:22] NOTICE[32805]: chan_mgcp.c:4688 reload_config: Unable to load config mgcp.conf, MGCP disabled
+[Jul 13 14:35:22] WARNING[38339]: app_voicemail_imap.c:14258 actual_load_config: Failed to load configuration file.
+[Jul 13 14:35:22] NOTICE[38339]: app_queue.c:9286 reload_queue_rules: queuerules.conf has not changed since it was last loaded. Not taking any action.
+vaibhav-virtual-machine*CLI> 
+vaibhav-virtual-machine*CLI> 
+vaibhav-virtual-machine*CLI> exit
+Asterisk cleanly ending (0).
+Executing last minute cleanups
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ 
+vaibhav@vaibhav-virtual-machine:/etc/asterisk$ sudo asterisk -r
+Asterisk 18.10.0~dfsg+~cs6.10.40431411-2, Copyright (C) 1999 - 2021, Sangoma Technologies Corporation and others.
+Created by Mark Spencer <markster@digium.com>
+Asterisk comes with ABSOLUTELY NO WARRANTY; type 'core show warranty' for details.
+This is free software, with components licensed under the GNU General Public
+License version 2 and other licenses; you are welcome to redistribute it under
+certain conditions. Type 'core show license' for details.
+=========================================================================
+Connected to Asterisk 18.10.0~dfsg+~cs6.10.40431411-2 currently running on vaibhav-virtual-machine (pid = 32757)
+vaibhav-virtual-machine*CLI> sip show peers
+Name/username             Host                                    Dyn Forcerport Comedia    ACL Port     Status      Description                      
+101                       (Unspecified)                            D  Yes        Yes            0        Unmonitored                                  
+102                       (Unspecified)                            D  Yes        Yes            0        Unmonitored                                  
+2 sip peers [Monitored: 0 online, 0 offline Unmonitored: 0 online, 2 offline]
+vaibhav-virtual-machine*CLI> 
+
+
