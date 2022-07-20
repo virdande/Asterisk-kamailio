@@ -1,0 +1,140 @@
+creating database kamailio ...
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: granting privileges to database kamailio ...
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1396 (HY000) at line 1: Operation CREATE USER failed for 'root'@'localhost'
+-e \E[37;33mINFO: creating standard tables into kamailio ...
+-e Creating core table: standard
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: acc
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: lcr
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: domain
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: group
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: permissions
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: registrar
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: usrloc
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: msilo
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: alias_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: uri_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: speeddial
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: avpops
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: auth_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: pdt
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: dialog
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: dispatcher
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: dialplan
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: topos
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: Core Kamailio tables successfully created.
+Create the presence related tables? (y/n): y
+-e \E[37;33mINFO: creating presence tables into kamailio ...
+-e Creating presence tables for presence
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating presence tables for rls
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: Presence tables successfully created.
+Create the tables for imc cpl siptrace domainpolicy carrierroute
+		drouting userblocklist htable purple uac pipelimit mtree sca mohqueue
+		rtpproxy rtpengine secfilter? (y/n): y
+-e \E[37;33mINFO: creating extra tables into kamailio ...
+-e Creating extra table: imc
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: cpl
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: siptrace
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: domainpolicy
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: carrierroute
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: drouting
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: userblocklist
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: htable
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: purple
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: uac
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: pipelimit
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: mtree
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: sca
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: mohqueue
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: rtpproxy
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: rtpengine
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: secfilter
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: Extra tables successfully created.
+Create the tables for uid_auth_db uid_avp_db uid_domain uid_gflags
+		uid_uri_db? (y/n): y
+-e \E[37;33mINFO: creating uid tables into kamailio ...
+-e Creating uid table: uid_auth_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_avp_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_domain
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_gflags
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_uri_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: UID tables successfully created.
+root@virdande-VirtualBox:/usr/local/src# 
+root@virdande-VirtualBox:/usr/local/src# 
+root@virdande-VirtualBox:/usr/local/src# service kamailio restart
+root@virdande-VirtualBox:/usr/local/src# 
+root@virdande-VirtualBox:/usr/local/src# /etc/kamailio/kamailio.cfg 
+bash: /etc/kamailio/kamailio.cfg: Permission denied
+root@virdande-VirtualBox:/usr/local/src# kamctl add 1000 654321
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e is_user: user counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e check_db_alias: alias counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e new user '1000' added
+root@virdande-VirtualBox:/usr/local/src# kamctl add 1001 654321
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e is_user: user counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e check_db_alias: alias counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e new user '1001' added
+root@virdande-VirtualBox:/usr/local/src# kamctl db show subscriber
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----+----------+-----------+----------+----------------------------------+----------------------------------+
+| id | username | domain    | password | ha1                              | ha1b                             |
++----+----------+-----------+----------+----------------------------------+----------------------------------+
+|  1 | 1000     | 127.0.0.1 | 654321   | 42e2b58e2d417f614413fbc78b118c6f | c74f988a4026c25e4ef58163650ab9ae |
+|  2 | 1001     | 127.0.0.1 | 654321   | 67f0549c1bc3abd8fc803cc5f684a59a | 8c7708c657e7ee92d36a0c1473a64602 |
++----+----------+-----------+----------+----------------------------------+----------------------------------+
+root@virdande-VirtualBox:/usr/local/src# 

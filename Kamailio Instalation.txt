@@ -1,0 +1,310 @@
+virdande@virdande-VirtualBox:~$ sudo nano /etc/apt/sources.list
+[sudo] password for virdande: 
+virdande@virdande-VirtualBox:~$ apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+curl http://deb.kamailio.org/kamailiodebkey.gpg | apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.a3gtcrcCCA/gpg.1.sh --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+gpg: key FB40D3E6508EA4C8: public key "Kamailio Package Team <pkg@kamailio.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+/usr/bin/apt-key: 391: cannot create /etc/apt/trusted.gpg: Permission denied
+cat: /tmp/apt-key-gpghome.a3gtcrcCCA/gpgoutput.log: No such file or directory
+Command 'curl' not found, but can be installed with:
+sudo apt install curl
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+E: This command can only be used by root.
+virdande@virdande-VirtualBox:~$ sudo su
+root@virdande-VirtualBox:/home/virdande# apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+curl http://deb.kamailio.org/kamailiodebkey.gpg | apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.QJWvi8R2Ks/gpg.1.sh --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+gpg: key FB40D3E6508EA4C8: public key "Kamailio Package Team <pkg@kamailio.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+Command 'curl' not found, but can be installed with:
+apt install curl
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+gpg: no valid OpenPGP data found.
+root@virdande-VirtualBox:/home/virdande# curl http://deb.kamailio.org/kamailiodebkey.gpg | apt-key add - 
+Command 'curl' not found, but can be installed with:
+apt install curl
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+gpg: no valid OpenPGP data found.
+root@virdande-VirtualBox:/home/virdande# apt update
+Hit:1 http://in.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://in.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:3 http://in.archive.ubuntu.com/ubuntu jammy-backports InRelease        
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]  
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [11.4 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [608 B]
+Get:7 http://deb.kamailio.org/kamailio bionic InRelease [4,223 B] 
+Get:8 http://deb.kamailio.org/kamailio bionic/main Sources [1,372 B]
+Get:9 http://deb.kamailio.org/kamailio bionic/main i386 Packages [14.8 kB]
+Get:10 http://deb.kamailio.org/kamailio bionic/main amd64 Packages [14.7 kB]  
+Fetched 157 kB in 6s (24.5 kB/s)                                              
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+172 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: http://deb.kamailio.org/kamailio/dists/bionic/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+root@virdande-VirtualBox:/home/virdande# apt-get -y install kamailio kamailio-extra-modules kamailio-ims-modules \
+kamailio-mysql-modules kamailio-presence-modules \
+kamailio-tls-modules kamailio-websocket-modules kamailio-xml-modules \
+kamailio-xmpp-modules
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi
+  libgstreamer-plugins-bad1.0-0 libva-wayland2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  default-mysql-client libev4 libmysqlclient21 mysql-client-8.0
+  mysql-client-core-8.0 mysql-common
+Suggested packages:
+  kamailio-berkeley-modules kamailio-cpl-modules kamailio-ldap-modules
+  kamailio-lua-modules kamailio-mono-modules kamailio-perl-modules
+  kamailio-postgres-modules kamailio-python3-modules kamailio-radius-modules
+  kamailio-redis-modules kamailio-snmpstats-modules kamailio-unixodbc-modules
+  stun-server | turn-server
+The following NEW packages will be installed:
+  default-mysql-client kamailio kamailio-extra-modules kamailio-ims-modules
+  kamailio-mysql-modules kamailio-presence-modules kamailio-tls-modules
+  kamailio-websocket-modules kamailio-xml-modules kamailio-xmpp-modules
+  libev4 libmysqlclient21 mysql-client-8.0 mysql-client-core-8.0 mysql-common
+0 upgraded, 15 newly installed, 0 to remove and 172 not upgraded.
+Need to get 17.0 MB of archives.
+After this operation, 108 MB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio amd64 5.5.4-1 [9,486 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-client-core-8.0 amd64 8.0.29-0ubuntu0.22.04.2 [2,483 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu jammy/main amd64 mysql-common all 5.8+1.0.8 [7,212 B]
+Get:4 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-client-8.0 amd64 8.0.29-0ubuntu0.22.04.2 [22.7 kB]
+Get:5 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 default-mysql-client all 1.0.8 [3,362 B]
+Get:6 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 libev4 amd64 1:4.33-1 [29.4 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-extra-modules amd64 5.5.4-1 [215 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-ims-modules amd64 5.5.4-1 [1,778 kB]
+Get:9 http://in.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libmysqlclient21 amd64 8.0.29-0ubuntu0.22.04.2 [1,273 kB]
+Get:10 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-mysql-modules amd64 5.5.4-1 [93.0 kB]
+Get:11 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-presence-modules amd64 5.5.4-1 [983 kB]
+Get:12 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-tls-modules amd64 5.5.4-1 [275 kB]
+Get:13 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-websocket-modules amd64 5.5.4-1 [78.6 kB]
+Get:14 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-xml-modules amd64 5.5.4-1 [188 kB]
+Get:15 http://in.archive.ubuntu.com/ubuntu jammy/universe amd64 kamailio-xmpp-modules amd64 5.5.4-1 [68.8 kB]
+Fetched 17.0 MB in 3s (5,500 kB/s)           
+Selecting previously unselected package kamailio.
+(Reading database ... 195991 files and directories currently installed.)
+Preparing to unpack .../00-kamailio_5.5.4-1_amd64.deb ...
+Unpacking kamailio (5.5.4-1) ...
+Selecting previously unselected package mysql-client-core-8.0.
+Preparing to unpack .../01-mysql-client-core-8.0_8.0.29-0ubuntu0.22.04.2_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.29-0ubuntu0.22.04.2) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../02-mysql-common_5.8+1.0.8_all.deb ...
+Unpacking mysql-common (5.8+1.0.8) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../03-mysql-client-8.0_8.0.29-0ubuntu0.22.04.2_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.29-0ubuntu0.22.04.2) ...
+Selecting previously unselected package default-mysql-client.
+Preparing to unpack .../04-default-mysql-client_1.0.8_all.deb ...
+Unpacking default-mysql-client (1.0.8) ...
+Selecting previously unselected package libev4:amd64.
+Preparing to unpack .../05-libev4_1%3a4.33-1_amd64.deb ...
+Unpacking libev4:amd64 (1:4.33-1) ...
+Selecting previously unselected package kamailio-extra-modules:amd64.
+Preparing to unpack .../06-kamailio-extra-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-extra-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package kamailio-ims-modules:amd64.
+Preparing to unpack .../07-kamailio-ims-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-ims-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package libmysqlclient21:amd64.
+Preparing to unpack .../08-libmysqlclient21_8.0.29-0ubuntu0.22.04.2_amd64.deb ...
+Unpacking libmysqlclient21:amd64 (8.0.29-0ubuntu0.22.04.2) ...
+Selecting previously unselected package kamailio-mysql-modules:amd64.
+Preparing to unpack .../09-kamailio-mysql-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-mysql-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package kamailio-presence-modules:amd64.
+Preparing to unpack .../10-kamailio-presence-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-presence-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package kamailio-tls-modules:amd64.
+Preparing to unpack .../11-kamailio-tls-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-tls-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package kamailio-websocket-modules:amd64.
+Preparing to unpack .../12-kamailio-websocket-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-websocket-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package kamailio-xml-modules:amd64.
+Preparing to unpack .../13-kamailio-xml-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-xml-modules:amd64 (5.5.4-1) ...
+Selecting previously unselected package kamailio-xmpp-modules:amd64.
+Preparing to unpack .../14-kamailio-xmpp-modules_5.5.4-1_amd64.deb ...
+Unpacking kamailio-xmpp-modules:amd64 (5.5.4-1) ...
+Setting up mysql-common (5.8+1.0.8) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mysql-client-core-8.0 (8.0.29-0ubuntu0.22.04.2) ...
+Setting up libmysqlclient21:amd64 (8.0.29-0ubuntu0.22.04.2) ...
+Setting up libev4:amd64 (1:4.33-1) ...
+Setting up kamailio (5.5.4-1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/kamailio.service → /lib/systemd/system/kamailio.service.
+Setting up kamailio-tls-modules:amd64 (5.5.4-1) ...
+Setting up mysql-client-8.0 (8.0.29-0ubuntu0.22.04.2) ...
+Setting up kamailio-presence-modules:amd64 (5.5.4-1) ...
+Setting up kamailio-ims-modules:amd64 (5.5.4-1) ...
+Setting up default-mysql-client (1.0.8) ...
+Setting up kamailio-xml-modules:amd64 (5.5.4-1) ...
+Setting up kamailio-mysql-modules:amd64 (5.5.4-1) ...
+Setting up kamailio-extra-modules:amd64 (5.5.4-1) ...
+Setting up kamailio-websocket-modules:amd64 (5.5.4-1) ...
+Setting up kamailio-xmpp-modules:amd64 (5.5.4-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3) ...
+root@virdande-VirtualBox:/home/virdande# ^C
+root@virdande-VirtualBox:/home/virdande# ^C
+root@virdande-VirtualBox:/home/virdande# 
+
+
+
+
+
+
+
+-e \E[37;33mINFO: creating database kamailio ...
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: granting privileges to database kamailio ...
+mysql: [Warning] Using a password on the command line interface can be insecure.
+ERROR 1396 (HY000) at line 1: Operation CREATE USER failed for 'root'@'localhost'
+-e \E[37;33mINFO: creating standard tables into kamailio ...
+-e Creating core table: standard
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: acc
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: lcr
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: domain
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: group
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: permissions
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: registrar
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: usrloc
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: msilo
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: alias_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: uri_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: speeddial
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: avpops
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: auth_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: pdt
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: dialog
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: dispatcher
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: dialplan
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating core table: topos
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: Core Kamailio tables successfully created.
+Create the presence related tables? (y/n): y
+-e \E[37;33mINFO: creating presence tables into kamailio ...
+-e Creating presence tables for presence
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating presence tables for rls
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: Presence tables successfully created.
+Create the tables for imc cpl siptrace domainpolicy carrierroute
+		drouting userblocklist htable purple uac pipelimit mtree sca mohqueue
+		rtpproxy rtpengine secfilter? (y/n): y
+-e \E[37;33mINFO: creating extra tables into kamailio ...
+-e Creating extra table: imc
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: cpl
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: siptrace
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: domainpolicy
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: carrierroute
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: drouting
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: userblocklist
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: htable
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: purple
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: uac
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: pipelimit
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: mtree
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: sca
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: mohqueue
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: rtpproxy
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: rtpengine
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating extra table: secfilter
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: Extra tables successfully created.
+Create the tables for uid_auth_db uid_avp_db uid_domain uid_gflags
+		uid_uri_db? (y/n): y
+-e \E[37;33mINFO: creating uid tables into kamailio ...
+-e Creating uid table: uid_auth_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_avp_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_domain
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_gflags
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e Creating uid table: uid_uri_db
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e \E[37;33mINFO: UID tables successfully created.
+root@virdande-VirtualBox:/usr/local/src# 
+root@virdande-VirtualBox:/usr/local/src# 
+root@virdande-VirtualBox:/usr/local/src# service kamailio restart
+root@virdande-VirtualBox:/usr/local/src# 
+root@virdande-VirtualBox:/usr/local/src# /etc/kamailio/kamailio.cfg 
+bash: /etc/kamailio/kamailio.cfg: Permission denied
+root@virdande-VirtualBox:/usr/local/src# kamctl add 1000 654321
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e is_user: user counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e check_db_alias: alias counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e new user '1000' added
+root@virdande-VirtualBox:/usr/local/src# kamctl add 1001 654321
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e is_user: user counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e check_db_alias: alias counter=0
+mysql: [Warning] Using a password on the command line interface can be insecure.
+-e new user '1001' added
+root@virdande-VirtualBox:/usr/local/src# kamctl db show subscriber
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----+----------+-----------+----------+----------------------------------+----------------------------------+
+| id | username | domain    | password | ha1                              | ha1b                             |
++----+----------+-----------+----------+----------------------------------+----------------------------------+
+|  1 | 1000     | 127.0.0.1 | 654321   | 42e2b58e2d417f614413fbc78b118c6f | c74f988a4026c25e4ef58163650ab9ae |
+|  2 | 1001     | 127.0.0.1 | 654321   | 67f0549c1bc3abd8fc803cc5f684a59a | 8c7708c657e7ee92d36a0c1473a64602 |
++----+----------+-----------+----------+----------------------------------+----------------------------------+
+root@virdande-VirtualBox:/usr/local/src# 
+
+
