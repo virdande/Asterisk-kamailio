@@ -1,0 +1,69 @@
+irdande@virdande-VirtualBox:~$ sudo nano /etc/apt/sources.list
+[sudo] password for virdande: 
+virdande@virdande-VirtualBox:~$ apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+curl http://deb.kamailio.org/kamailiodebkey.gpg | apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.a3gtcrcCCA/gpg.1.sh --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+gpg: key FB40D3E6508EA4C8: public key "Kamailio Package Team <pkg@kamailio.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+/usr/bin/apt-key: 391: cannot create /etc/apt/trusted.gpg: Permission denied
+cat: /tmp/apt-key-gpghome.a3gtcrcCCA/gpgoutput.log: No such file or directory
+Command 'curl' not found, but can be installed with:
+sudo apt install curl
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+E: This command can only be used by root.
+virdande@virdande-VirtualBox:~$ sudo su
+root@virdande-VirtualBox:/home/virdande# apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+curl http://deb.kamailio.org/kamailiodebkey.gpg | apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+Executing: /tmp/apt-key-gpghome.QJWvi8R2Ks/gpg.1.sh --recv-keys --keyserver keyserver.ubuntu.com 0xfb40d3e6508ea4c8
+gpg: key FB40D3E6508EA4C8: public key "Kamailio Package Team <pkg@kamailio.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+Command 'curl' not found, but can be installed with:
+apt install curl
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+gpg: no valid OpenPGP data found.
+root@virdande-VirtualBox:/home/virdande# curl http://deb.kamailio.org/kamailiodebkey.gpg | apt-key add - 
+Command 'curl' not found, but can be installed with:
+apt install curl
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+gpg: no valid OpenPGP data found.
+root@virdande-VirtualBox:/home/virdande# apt update
+Hit:1 http://in.archive.ubuntu.com/ubuntu jammy InRelease
+Hit:2 http://in.archive.ubuntu.com/ubuntu jammy-updates InRelease
+Hit:3 http://in.archive.ubuntu.com/ubuntu jammy-backports InRelease        
+Get:4 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]  
+Get:5 http://security.ubuntu.com/ubuntu jammy-security/main amd64 DEP-11 Metadata [11.4 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 DEP-11 Metadata [608 B]
+Get:7 http://deb.kamailio.org/kamailio bionic InRelease [4,223 B] 
+Get:8 http://deb.kamailio.org/kamailio bionic/main Sources [1,372 B]
+Get:9 http://deb.kamailio.org/kamailio bionic/main i386 Packages [14.8 kB]
+Get:10 http://deb.kamailio.org/kamailio bionic/main amd64 Packages [14.7 kB]  
+Fetched 157 kB in 6s (24.5 kB/s)                                              
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+172 packages can be upgraded. Run 'apt list --upgradable' to see them.
+W: http://deb.kamailio.org/kamailio/dists/bionic/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+root@virdande-VirtualBox:/home/virdande# apt-get -y install kamailio kamailio-extra-modules kamailio-ims-modules \
+kamailio-mysql-modules kamailio-presence-modules \
+kamailio-tls-modules kamailio-websocket-modules kamailio-xml-modules \
+kamailio-xmpp-modules
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  chromium-codecs-ffmpeg-extra gstreamer1.0-vaapi
+  libgstreamer-plugins-bad1.0-0 libva-wayland2
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  default-mysql-client libev4 libmysqlclient21 mysql-client-8.0
+  mysql-client-core-8.0 mysql-common
+Suggested packages:
+  kamailio-berkeley-modules kamailio-cpl-modules kamailio-ldap-modules
+  kamailio-lua-modules kamailio-mono-modules kamailio-perl-modules
+  kamailio-postgres-modules kamailio-python3-modules kamailio-radius-modules
+  kamailio-redis-modules kamailio-snmpstats-modules kamailio-unixodbc-modules
+  stun-server | turn-server
