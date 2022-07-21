@@ -1,0 +1,24 @@
+root@virdande-VirtualBox:/usr/local/src# nano /etc/kamailio/kamctlrc
+root@virdande-VirtualBox:/usr/local/src# nano /etc/kamailio/kamctlrc
+root@virdande-VirtualBox:/usr/local/src# kamctl dispatcher add 1 sip:mg1:5060 0 0 '' 'Media Gateway 1'
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
+root@virdande-VirtualBox:/usr/local/src# kamctl dispatcher add 1 sip:mg2:5060 0 0 '' 'Media Gateway 2' 
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+mysql: [Warning] Using a password on the command line interface can be insecure.
+root@virdande-VirtualBox:/usr/local/src# kamctl dispatcher show
+-e database engine 'MYSQL' loaded
+-e Control engine 'RPCFIFO' loaded
+-e dispatcher gateways
+mysql: [Warning] Using a password on the command line interface can be insecure.
++----+-------+--------------+-------+----------+-------+-----------------+
+| id | setid | destination  | flags | priority | attrs | description     |
++----+-------+--------------+-------+----------+-------+-----------------+
+|  1 |     1 | sip:mg1:5060 |     0 |        0 |       | Media Gateway 1 |
+|  2 |     1 | sip:mg2:5060 |     0 |        0 |       | Media Gateway 2 |
++----+-------+--------------+-------+----------+-------+-----------------+
+root@virdande-VirtualBox:/usr/local/src# kamcmd dispatcher.list
+
+
